@@ -48,7 +48,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
 zinit snippet OMZL::git.zsh
-zinit snippet OMZL::directories.zsh
 zinit snippet OMZP::git
 # zinit snippet OMZP::sudo
 zinit snippet OMZP::cp
@@ -82,6 +81,13 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 ####################### ALIAS ###########################
+
+# directory related aliases
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+alias mkdir="mkdir -p"
 
 # application based aliases
 alias v="nvim"
