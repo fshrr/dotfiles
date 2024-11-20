@@ -18,10 +18,16 @@ export VISUAL=$(which nvim)
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
-setopt hist_ignore_all_dups # remove older duplicate entries from history
-setopt hist_reduce_blanks # remove superfluous blanks from history items
-setopt inc_append_history # save history entries as soon as they are entered
-setopt share_history # share history between different instances of the shell
+HISTDUP=erase
+setopt inc_append_history 
+setopt append_history
+setopt share_history
+setopt hist_reduce_blanks
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # command autocomplete
 setopt auto_list # automatically list choices on ambiguous completion
@@ -37,20 +43,40 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 ####################### ZINIT PLUGINS ###########################
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+####################### ZINIT SNIPPETS ###########################
+zinit snippet OMZL::git.zsh
+zinit snippet OMZL::directories.zsh
+zinit snippet OMZP::git
+# zinit snippet OMZP::sudo
+zinit snippet OMZP::cp
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::aws
+zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::alias-finder
+
+####################### ZSTYLES ###########################
+
+# alias-finder
+zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
+zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
+zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
+zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 ####################### ALIAS ###########################
 
 # application based aliases
-alias sudo="sudo "
 alias v="nvim"
 alias sv="sudo nvim"
-alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
-alias safari="/usr/bin/open -a '/Applications/Safari.app'"
 
 # Aliases to make life easier
+alias l="eza -al"
 alias ls="eza"
-alias ..="cd .."
-alias ...="cd ../.."
 alias zconf="nvim ~/.zshrc"
 alias vconf="nvim ~/.config/nvim/init.vim"
 alias tconf="nvim ~/.tmux.conf"
@@ -65,18 +91,8 @@ alias ta="tmux attach -t"
 alias tl="tmux ls"
 alias tk="tmux kill-session -t"
 
-# tmux aliases
-alias tmux="TERM=xterm-256color tmux"
-alias tn="tmux new -s"
-alias ta="tmux attach -t"
-alias tl="tmux ls"
-alias tk="tmux kill-session -t"
-
 # python aliases
 alias py="python"
-
-# plugin related aliases
-alias cp="rsync --progress -ah"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
