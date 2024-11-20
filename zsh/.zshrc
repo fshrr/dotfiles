@@ -41,24 +41,25 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-####################### ZINIT PLUGINS ###########################
+####################### ZINIT PLUGINS & SNIPPETS ###########################
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
-####################### ZINIT SNIPPETS ###########################
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::directories.zsh
 zinit snippet OMZP::git
 # zinit snippet OMZP::sudo
 zinit snippet OMZP::cp
 zinit snippet OMZP::colored-man-pages
-zinit snippet OMZP::aws
-zinit snippet OMZP::docker
-zinit snippet OMZP::docker-compose
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::alias-finder
+
+# Load completions
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
 
 ####################### ZSTYLES ###########################
 
@@ -67,6 +68,18 @@ zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
 zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+####################### SHELL INTEGRATIONS ###########################
+
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 ####################### ALIAS ###########################
 
@@ -93,6 +106,9 @@ alias tk="tmux kill-session -t"
 
 # python aliases
 alias py="python"
+
+# docker aliases
+alias dps='docker ps -a'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
