@@ -1,5 +1,5 @@
 ####################### PROMPT ###########################
-source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -47,7 +47,7 @@ alias zconf="nvim ~/.zshrc"
 alias vconf="nvim ~/.config/nvim/init.vim"
 alias tconf="nvim ~/.tmux.conf"
 alias nconf="nvim ~/.config/nix-darwin/flake.nix"
-alias i3conf="nvim ~/.config/i3/config"
+alias dot="cd ~/.dotfiles"
 alias rmf="rm -rf"
 
 # tmux aliases
