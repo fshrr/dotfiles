@@ -98,8 +98,10 @@ alias l="eza -al"
 alias ls="eza"
 alias zconf="nvim ~/.zshrc"
 alias vconf="nvim ~/.config/nvim"
-alias tconf="nvim ~/.tmux.conf"
+alias tconf="nvim ~/.config/tmux/.tmux.conf"
 alias nconf="nvim ~/.config/nix-darwin/flake.nix"
+alias kconf="nvim ~/.config/kitty/kitty.conf"
+
 alias dot="cd ~/.dotfiles"
 alias rmf="rm -rf"
 
