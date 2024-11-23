@@ -118,5 +118,8 @@ alias py="python"
 # docker aliases
 alias dps='docker ps -a'
 
+# homelab related aliases
+alias recyclarr="docker exec recyclarr recyclarr"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
