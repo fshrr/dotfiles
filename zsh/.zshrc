@@ -80,6 +80,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 
+tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
+
 ####################### ALIAS ###########################
 
 # directory related aliases
