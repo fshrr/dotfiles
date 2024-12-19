@@ -77,18 +77,20 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 ####################### SHELL INTEGRATIONS ###########################
 
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
 tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
 ####################### ALIAS ###########################
 
+# system
+alias sudo='sudo '
+alias dushr='du -sh * | sort -rh'
+
 # directory related aliases
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
 alias mkdir="mkdir -p"
 
 # application based aliases
