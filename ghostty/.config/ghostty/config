@@ -1,0 +1,11 @@
+# Window
+title = Ghostty
+background = #333534
+window-width = 80
+window-height = 26
+window-padding-x = 5
+window-padding-y = 1
+window-colorspace = display-p3
+macos-titlebar-style = native
+macos-titlebar-proxy-icon = hidden
+
