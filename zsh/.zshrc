@@ -11,6 +11,7 @@ fi
 
 export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
+export TERM=xterm-256color
 
 ####################### ZSH BASE CONFIGS ###########################
 
@@ -95,7 +96,6 @@ alias mkdir="mkdir -p"
 
 # application based aliases
 alias v="nvim"
-alias sv="sudo nvim"
 
 # Aliases to make life easier
 alias l="eza -al"
