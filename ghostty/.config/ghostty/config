@@ -11,6 +11,10 @@
 
 shell-integration = zsh
 
-theme = nord
+theme = catppuccin-mocha
 window-padding-x = 15
 window-padding-y = 10
+
+background-opacity = 0.9
+background-blur-radius = 20
+window-step-resize = false
