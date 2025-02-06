@@ -112,6 +112,8 @@ alias tconf="nvim ~/.config/tmux/tmux.conf.local"
 alias nconf="nvim ~/.config/nix-darwin/flake.nix"
 alias kconf="nvim ~/.config/kitty/kitty.conf"
 alias gconf="nvim ~/.config/ghostty/config"
+alias npm="pnpm"
+alias npx="pnpx"
 
 alias dot="cd ~/.dotfiles"
 alias rmf="rm -rf"
