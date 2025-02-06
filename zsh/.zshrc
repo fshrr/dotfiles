@@ -14,6 +14,7 @@ export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
 export TERM=xterm-256color
 export PATH="/Users/protoxpire0/.local/bin:$PATH"
+
 ####################### ZSH BASE CONFIGS ###########################
 
 # history
