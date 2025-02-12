@@ -116,7 +116,7 @@ alias gconf="nvim ~/.config/ghostty/config"
 alias gitconf="nvim ~/.config/git/.gitconfig"
 alias npm="pnpm"
 alias npx="pnpx"
-alias ga="git add -N . & git add -p"
+alias gall="git add -N . & git add -p"
 
 alias dot="cd ~/.dotfiles"
 alias rmf="rm -rf"
