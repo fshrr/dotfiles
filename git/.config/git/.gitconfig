@@ -1,0 +1,22 @@
+# This is Git's per-user configuration file.
+[user]
+	name = summerlimes
+	email = fahim.shahreer95@gmail.com
+[core]
+	ignorecase = false
+	pager = delta
+[commit]
+	gpgsign = false
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+	default = current
+[alias]
+	undo = reset --soft HEAD^
+
+[delta]
+	line-numbers = true
