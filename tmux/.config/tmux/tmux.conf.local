@@ -21,7 +21,7 @@ tmux_conf_preserve_stock_bindings=false
 #   - true
 #   - false (default)
 #   - disabled (do not modify new-session bindings)
-tmux_conf_new_session_prompt=false
+tmux_conf_new_session_prompt=true
 
 # new session retains current path, possible values are:
 #   - true
@@ -376,10 +376,10 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # this is the place to override or undo settings
 
 # increase history size
-#set -g history-limit 10000
+set -g history-limit 10000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -387,17 +387,33 @@ tmux_conf_urlscan_options="--compact --dedupe"
 #set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
-# unbind C-b
-# set -g prefix C-a
-# bind C-a send-prefix
+set -gu prefix2
+unbind C-a
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# source zshrc in all active tmux shell sessions
+# send "source ~/.zshrc<Enter>" to all panes in *current* session
+bind Z run 'panes=`tmux list-panes -s -F "##{pane_id}"`; \
+              for pane in $panes; do \
+                tmux send -t $pane "source ~/.zshrc" Enter; \
+              done'
+
 
 # if you don't want Oh my tmux! to alter a binding or a setting, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # move status line to top
 #set -g status-position top
+
+# Pane creation
+unbind -
+unbind _
+bind H split-window -hb  # split left
+bind J split-window -v   # split down
+bind K split-window -vb  # split up
+bind L split-window -h   # split right
 
 
 # -- tpm -----------------------------------------------------------------------
