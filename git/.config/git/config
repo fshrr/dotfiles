@@ -18,3 +18,5 @@
 	line-numbers = true
 [fetch]
         prune = true
+[interactive]
+	singleKey = true
