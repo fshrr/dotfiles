@@ -50,8 +50,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git
 # zinit snippet OMZP::sudo
 zinit snippet OMZP::cp
 zinit snippet OMZP::colored-man-pages
@@ -112,11 +110,11 @@ alias vconf="nvim ~/.config/nvim"
 alias tconf="nvim ~/.config/tmux/tmux.conf.local"
 alias nconf="nvim ~/.config/nix-darwin/flake.nix"
 alias kconf="nvim ~/.config/kitty/kitty.conf"
-alias gconf="nvim ~/.config/ghostty/config"
+alias ghostconf="nvim ~/.config/ghostty/config"
 alias gitconf="nvim ~/.config/git/config"
+alias sshconf="nvim ~/.ssh/config"
 alias npm="pnpm"
 alias npx="pnpx"
-alias gall="git add -N . & git add -p"
 
 alias dot="cd ~/.dotfiles"
 alias rmf="rm -rf"
