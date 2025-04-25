@@ -1,0 +1,5 @@
+rcmd - v : open -a Vivaldi
+rcmd - g : open -a Ghostty
+rcmd - c : open -a "Visual Studio Code"
+rcmd - n : open -a Notion
+
