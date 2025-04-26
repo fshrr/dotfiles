@@ -1,18 +1,20 @@
 # Window
 # title = Ghostty
-# background = #333534
-# window-width = 80
-# window-height = 26
 # window-colorspace = display-p3
-# macos-titlebar-style = native
-# macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
+window-decoration = false
+window-width = 120
+window-height = 40
 
 shell-integration = zsh
 
 theme = Everforest Dark - Hard
-window-padding-x = 2
-window-padding-y = 2
+window-padding-x = 10
+window-padding-y = 10
 
-background-opacity = 0.9
+background-opacity = 0.95
 background-blur-radius = 20
 window-step-resize = false
+
+macos-icon = holographic
