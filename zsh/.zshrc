@@ -1,12 +1,4 @@
 fortune | cowsay | lolcat
-####################### P10K ###########################
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 ####################### ENV STUFF ###########################
 
@@ -45,7 +37,6 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 ####################### ZINIT PLUGINS & SNIPPETS ###########################
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -60,6 +51,12 @@ zinit snippet OMZP::alias-finder
 # autoload -Uz compinit && compinit
 
 zinit cdreplay -q
+
+####################### PROMPT ###########################
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
+fi
 
 ####################### ZSTYLES ###########################
 
@@ -113,8 +110,6 @@ alias kconf="nvim ~/.config/kitty/kitty.conf"
 alias ghostconf="nvim ~/.config/ghostty/config"
 alias gitconf="nvim ~/.config/git/config"
 alias sshconf="nvim ~/.ssh/config"
-alias npm="pnpm"
-alias npx="pnpx"
 
 alias dot="cd ~/.dotfiles"
 alias rmf="rm -rf"
@@ -134,12 +129,6 @@ alias dps='docker ps -a'
 
 # homelab related aliases
 alias recyclarr="docker exec recyclarr recyclarr"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/zsh/.p10k.zsh.
-[[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh
 
 # pnpm
 export PNPM_HOME="/Users/protoxpire0/Library/pnpm"
