@@ -9,7 +9,7 @@ window-height = 40
 
 shell-integration = zsh
 
-theme = Everforest Dark - Hard
+theme = light:everforest-light-soft,dark:everforest-dark-hard
 window-padding-x = 10
 window-padding-y = 10
 
