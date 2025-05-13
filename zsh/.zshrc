@@ -126,7 +126,7 @@ alias py="python3"
 
 # docker aliases
 alias dps='docker ps -a'
-
+alias docker-compose-update='docker compose down && docker compose pull && docker compose up --force-recreate --remove-orphans -d'
 # homelab related aliases
 alias recyclarr="docker exec recyclarr recyclarr"
 
