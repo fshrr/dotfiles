@@ -104,7 +104,7 @@ alias l="eza -al"
 alias ls="eza"
 alias zconf="nvim ~/.zshrc"
 alias vconf="nvim ~/.config/nvim"
-alias tconf="nvim ~/.config/tmux/tmux.conf.local"
+alias tconf="nvim ~/.config/tmux"
 alias nconf="nvim ~/.config/nix-darwin/flake.nix"
 alias kconf="nvim ~/.config/kitty/kitty.conf"
 alias ghostconf="nvim ~/.config/ghostty/config"
@@ -137,3 +137,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/protoxpire0/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/protoxpire0/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/protoxpire0/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/protoxpire0/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
