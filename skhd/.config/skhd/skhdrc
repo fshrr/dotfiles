@@ -1,5 +1,9 @@
-rcmd - v : open -a Vivaldi
-rcmd - g : open -a Ghostty
-rcmd - c : open -a "Visual Studio Code"
+rcmd - 0x32 : open -a Ghostty
+rcmd - 0x2A : open -a Zed
+rcmd - 0x27 : open -a "Zen Browser"
+rcmd - 0x29 : open -a Helium
+rcmd - 0x2C : open -a Perplexity
+rcmd - 0x2F : open -a Obsidian
 rcmd - n : open -a Notion
-
+rcmd - 0 : open -a Figma
+rcmd - s : open -a Slack
