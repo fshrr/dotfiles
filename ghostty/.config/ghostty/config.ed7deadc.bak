@@ -9,7 +9,7 @@ window-height = 40
 
 shell-integration = zsh
 
-theme = light:modus-operandi-high-contrast,dark:modus-vivendi-low-contrast
+theme = light:everforest-light-soft,dark:everforest-dark-hard
 window-padding-x = 10
 window-padding-y = 10
 
@@ -18,4 +18,3 @@ background-blur-radius = 20
 window-step-resize = false
 
 macos-icon = holographic
-keybind = shift+enter=text:\n
