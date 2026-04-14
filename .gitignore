@@ -7,3 +7,5 @@ lazy-lock.json
 *.zwc
 
 .DS_Store
+
+zsh/.config/zsh/99-local.zsh
