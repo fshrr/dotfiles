@@ -23,6 +23,7 @@ alias ls="eza"
 alias tmux="TERM=xterm-256color tmux"
 alias tn="tmux new -s"
 alias ta="tmux attach -t"
+t() { tmux new-session -A -s "${1:-${PWD##*/}}" }
 alias tl="tmux ls"
 alias tk="tmux kill-session -t"
 
