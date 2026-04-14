@@ -15,6 +15,7 @@ zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::alias-finder
 
+autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # alias-finder zstyles
