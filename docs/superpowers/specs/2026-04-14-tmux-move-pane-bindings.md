@@ -13,10 +13,10 @@ Prefix remains `~`.
 
 | Key | Action |
 |---|---|
-| `~ m <1-9>` | Join current pane into existing window N; focus follows to window N |
+| `~ m <1-9>` | Join current pane into existing window N as a horizontal split (side-by-side); focus follows to window N |
 | `~ m 0` | Break current pane into a new window at the end of the window list; focus follows |
 | `~ M` | Break current pane into a new window immediately after the current one; focus follows |
-
+| `~ w` | Swap the current window's layout between side-by-side (`even-horizontal`) and stacked (`even-vertical`) |`
 ### Mental model
 
 - Lowercase `m` is a **menu key**: hit it, then a digit. The digit chooses where.
@@ -42,18 +42,32 @@ Added to `tmux/.config/tmux/tmux.conf`, in a new section immediately after the e
 # -- move pane -----------------------------------------------------------------
 
 bind m switch-client -T move-pane
-bind -T move-pane 1 join-pane -t :1 \; select-window -t :1
-bind -T move-pane 2 join-pane -t :2 \; select-window -t :2
-bind -T move-pane 3 join-pane -t :3 \; select-window -t :3
-bind -T move-pane 4 join-pane -t :4 \; select-window -t :4
-bind -T move-pane 5 join-pane -t :5 \; select-window -t :5
-bind -T move-pane 6 join-pane -t :6 \; select-window -t :6
-bind -T move-pane 7 join-pane -t :7 \; select-window -t :7
-bind -T move-pane 8 join-pane -t :8 \; select-window -t :8
-bind -T move-pane 9 join-pane -t :9 \; select-window -t :9
+bind -T move-pane 1 join-pane -h -t :1 \; select-window -t :1
+bind -T move-pane 2 join-pane -h -t :2 \; select-window -t :2
+bind -T move-pane 3 join-pane -h -t :3 \; select-window -t :3
+bind -T move-pane 4 join-pane -h -t :4 \; select-window -t :4
+bind -T move-pane 5 join-pane -h -t :5 \; select-window -t :5
+bind -T move-pane 6 join-pane -h -t :6 \; select-window -t :6
+bind -T move-pane 7 join-pane -h -t :7 \; select-window -t :7
+bind -T move-pane 8 join-pane -h -t :8 \; select-window -t :8
+bind -T move-pane 9 join-pane -h -t :9 \; select-window -t :9
 bind -T move-pane 0 break-pane
 bind M break-pane -a
+
+bind w if-shell "tmux display -p '#{window_layout}' | grep -q '\\['" \
+  "select-layout even-horizontal" \
+  "select-layout even-vertical"
 ```
+
+### Why `-h` on join-pane
+
+`join-pane` with `-h` places the incoming pane side-by-side with the target window's existing pane(s) — splitting on a vertical boundary. This matches the user's intuition for "adding a pane vertically" and is consistent with how the existing `H`/`L` split bindings produce side-by-side panes.
+
+### Why `w` toggles whole-window layout (not just the current pair)
+
+A surgical "swap just these two panes" binding would need a `break-pane` + `join-pane` dance via `run-shell`. It's brittle (pane-id tracking across the detach/reattach) and has unclear behavior when the window has more than two panes. The layout toggle is one tmux command, always works, and on a 2-pane window produces exactly the swap the user wants. On a 3+-pane window it flattens into a row or column — a useful side behavior, not a bug.
+
+The toggle inspects `window_layout`, which tmux formats with `[...]` for top/bottom splits and `{...}` for left/right splits. Seeing a `[` means the window is currently stacked → flip to `even-horizontal`; otherwise flip to `even-vertical`.
 
 ### Why these tmux commands
 
@@ -75,10 +89,11 @@ If the moved pane was the only pane in the source window, tmux auto-closes the s
 
 1. Parse check: `tmux -f tmux/.config/tmux/tmux.conf -L spec-test new-session -d \; kill-server` exits 0.
 2. Manual smoke test in a live session:
-   - Open two windows. From window 1, hit `~ m 2`. Current pane moves into window 2, focus follows.
+   - Open two windows. From window 1, hit `~ m 2`. Current pane moves into window 2 as a side-by-side split, focus follows.
    - From a multi-pane window, hit `~ m 0`. The active pane becomes a new window at the end; focus follows.
    - From the middle of the window list, hit `~ M`. New window appears at `current+1`; focus follows.
    - Hit `~ m 7` when window 7 doesn't exist. Brief error shows in status line; no windows change.
+   - On a 2-pane side-by-side window, hit `~ w`. Panes flip to stacked. Hit `~ w` again. Panes flip back to side-by-side.
 
 ## Out of Scope
 
