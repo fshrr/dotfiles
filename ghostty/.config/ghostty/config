@@ -19,3 +19,8 @@ window-step-resize = false
 
 macos-icon = holographic
 keybind = shift+enter=text:\n
+
+font-family = "JetBrains Mono"
+
+auto-update = download
+auto-update-channel = tip
