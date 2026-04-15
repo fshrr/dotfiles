@@ -1,9 +1,16 @@
-rcmd - 0x32 : open -a Ghostty
-rcmd - 0x2A : open -a Zed
-rcmd - 0x27 : open -a "Zen Browser"
-rcmd - 0x29 : open -a Helium
-rcmd - 0x2C : open -a Perplexity
-rcmd - 0x2F : open -a Obsidian
-rcmd - n : open -a Notion
-rcmd - 0 : open -a Figma
-rcmd - s : open -a Slack
+# Switch workspace + open/focus app — Gigabyte (main)
+rcmd - g : aerospace workspace G; open -a Ghostty
+rcmd - e : aerospace workspace E; open -a Zed
+rcmd - z : aerospace workspace Z; open -a "Zen Browser"
+rcmd - c : aerospace workspace C; open -a Claude
+rcmd - p : aerospace workspace C; open -a Perplexity
+
+# Switch workspace + open/focus app — LG (secondary)
+rcmd - h : aerospace workspace H; open -a Helium
+rcmd - f : aerospace workspace F; open -a Figma
+rcmd - n : aerospace workspace N; open -a Notion
+rcmd - s : aerospace workspace S; open -a Slack
+rcmd - o : aerospace workspace O; open -a Obsidian
+
+# Throw current window to workspace 0 (misc/unstructured, floating)
+rcmd - 0 : aerospace move-node-to-workspace 0
