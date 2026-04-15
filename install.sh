@@ -6,7 +6,7 @@ PROFILE="${1:-}"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 case "$PROFILE" in
-  mac)     PACKAGES=(zsh git nvim tmux ghostty oh-my-posh skhd) ;;
+  mac)     PACKAGES=(zsh git nvim tmux ghostty oh-my-posh skhd aerospace) ;;
   server)  PACKAGES=(zsh git nvim tmux oh-my-posh) ;;
   minimal) PACKAGES=(zsh git) ;;
   ""|-h|--help)
@@ -14,7 +14,7 @@ case "$PROFILE" in
 Usage: $0 <profile>
 
 Profiles:
-  mac      Full macOS setup (zsh git nvim tmux ghostty oh-my-posh skhd)
+  mac      Full macOS setup (zsh git nvim tmux ghostty oh-my-posh skhd aerospace)
   server   Linux homelab (zsh git nvim tmux oh-my-posh)
   minimal  Bare minimum (zsh git)
 
