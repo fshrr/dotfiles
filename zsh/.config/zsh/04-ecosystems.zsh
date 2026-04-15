@@ -19,3 +19,8 @@ fi
 # fi
 
 # --- Rust --- (cargo env sourced in .zprofile)
+
+# --- thefuck ---
+if command -v thefuck >/dev/null; then
+  eval $(thefuck --alias)
+fi
