@@ -21,9 +21,15 @@ alias ls="eza"
 
 # tmux
 alias tmux="TERM=xterm-256color tmux"
-alias tn="tmux new -s"
+tn() { tmux new-session -A -s "${1:-${PWD##*/}}"; }
 alias ta="tmux attach -t"
-t() { tmux new-session -A -s "${1:-${PWD##*/}}" }
+t() {
+  if [ -n "$TMUX" ]; then
+    tmux choose-session -Z
+  elif tmux has-session 2>/dev/null; then
+    tmux attach \; choose-session -Z
+  fi
+}
 alias tl="tmux ls"
 alias tk="tmux kill-session -t"
 
