@@ -33,7 +33,7 @@ on-mode-changed = []
 # Pin workspaces to monitors
 # 'main' = Gigabyte (macOS main display), 'secondary' = LG
 [workspace-to-monitor-force-assignment]
-"0" = 'main'
+"0" = ['main', 'secondary', 'built-in']
 G   = 'main'
 E   = 'main'
 Z   = 'main'
@@ -109,18 +109,6 @@ run = ['move-node-to-workspace 0', 'layout floating']
     # Resize
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
-
-    # Switch workspace
-    alt-0 = 'workspace 0'
-    alt-g = 'workspace G'
-    alt-e = 'workspace E'
-    alt-z = 'workspace Z'
-    alt-c = 'workspace C'
-    # alt-h is reserved for 'focus left' — use rcmd-h (skhd) for workspace H
-    alt-f = 'workspace F'
-    alt-n = 'workspace N'
-    alt-s = 'workspace S'
-    alt-o = 'workspace O'
 
     # Move window to workspace
     alt-shift-0 = 'move-node-to-workspace 0'

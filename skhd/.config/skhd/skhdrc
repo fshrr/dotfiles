@@ -1,16 +1,15 @@
-# Switch workspace + open/focus app — Gigabyte (main)
-rcmd - g : aerospace workspace G; open -a Ghostty
-rcmd - e : aerospace workspace E; open -a Zed
-rcmd - z : aerospace workspace Z; open -a "Zen Browser"
-rcmd - c : aerospace workspace C; open -a Claude
-rcmd - p : aerospace workspace C; open -a Perplexity
+# Switch workspace — Gigabyte (main)
+rcmd - g : /opt/homebrew/bin/aerospace workspace G
+rcmd - e : /opt/homebrew/bin/aerospace workspace E
+rcmd - z : /opt/homebrew/bin/aerospace workspace Z
+rcmd - c : /opt/homebrew/bin/aerospace workspace C
 
-# Switch workspace + open/focus app — LG (secondary)
-rcmd - h : aerospace workspace H; open -a Helium
-rcmd - f : aerospace workspace F; open -a Figma
-rcmd - n : aerospace workspace N; open -a Notion
-rcmd - s : aerospace workspace S; open -a Slack
-rcmd - o : aerospace workspace O; open -a Obsidian
+# Switch workspace — LG (secondary)
+rcmd - h : /opt/homebrew/bin/aerospace workspace H
+rcmd - f : /opt/homebrew/bin/aerospace workspace F
+rcmd - n : /opt/homebrew/bin/aerospace workspace N
+rcmd - s : /opt/homebrew/bin/aerospace workspace S
+rcmd - o : /opt/homebrew/bin/aerospace workspace O
 
-# Throw current window to workspace 0 (misc/unstructured, floating)
-rcmd - 0 : aerospace move-node-to-workspace 0
+# Switch to catchall workspace
+rcmd - 0 : /opt/homebrew/bin/aerospace workspace 0
