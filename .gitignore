@@ -9,3 +9,4 @@ lazy-lock.json
 .DS_Store
 
 zsh/.config/zsh/99-local.zsh
+zsh/.config/zsh/.zcompdump
