@@ -4,6 +4,11 @@ export VISUAL="$EDITOR"
 export TERM=xterm-256color
 export PATH="$HOME/.local/bin:$PATH"
 
+# --- Snap (Linux only) ---
+case "$OSTYPE" in
+  linux*) [ -d /snap/bin ] && export PATH="/snap/bin:$PATH" ;;
+esac
+
 # --- Homebrew (macOS only) ---
 case "$OSTYPE" in
   darwin*)
