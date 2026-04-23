@@ -33,11 +33,8 @@ on-mode-changed = []
 # Pin workspaces to monitors
 # 'main' = Gigabyte (macOS main display), 'secondary' = LG
 [workspace-to-monitor-force-assignment]
-"0" = ['main', 'secondary', 'built-in']
-G   = 'main'
 E   = 'main'
 Z   = 'main'
-C   = 'main'
 H   = 'secondary'
 F   = 'secondary'
 N   = 'secondary'

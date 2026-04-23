@@ -13,3 +13,6 @@ rcmd - o : /opt/homebrew/bin/aerospace workspace O
 
 # Switch to catchall workspace
 rcmd - 0 : /opt/homebrew/bin/aerospace workspace 0
+
+# Move current workspace to next monitor
+rcmd + cmd - tab : /opt/homebrew/bin/aerospace move-workspace-to-monitor --wrap-around next
