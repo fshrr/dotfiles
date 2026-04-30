@@ -3,6 +3,7 @@
 # system
 alias sudo='sudo '
 alias dushr='du -sh * | sort -rh'
+alias ssh='ssh -C'
 
 # directory
 alias ..='cd ..'
@@ -41,9 +42,9 @@ alias dps='docker ps -a'
 alias recyclarr="docker exec recyclarr recyclarr"
 
 # config shortcuts
-alias zconf="nvim ~/.config/zsh/"
-alias vconf="nvim ~/.config/nvim"
-alias tconf="nvim ~/.config/tmux"
+alias zshconf="nvim ~/.config/zsh/"
+alias nvimconf="nvim ~/.config/nvim"
+alias tmuxconf="nvim ~/.config/tmux"
 alias gitconf="nvim ~/.config/git/config"
 alias sshconf="nvim ~/.ssh/config"
 
