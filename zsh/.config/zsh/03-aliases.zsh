@@ -16,7 +16,7 @@ alias v='nvim'
 alias less='nvim -R '
 
 # eza
-alias l="eza -al"
+alias l="eza -alg"
 alias ls="eza"
 
 # tmux
