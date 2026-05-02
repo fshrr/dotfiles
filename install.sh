@@ -6,7 +6,7 @@ PROFILE="${1:-}"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 case "$PROFILE" in
-  mac)     PACKAGES=(zsh git nvim tmux ghostty oh-my-posh skhd aerospace) ;;
+  mac)     PACKAGES=(zsh git nvim tmux ghostty oh-my-posh skhd aerospace zed) ;;
   server)  PACKAGES=(zsh git nvim tmux oh-my-posh) ;;
   minimal) PACKAGES=(zsh git) ;;
   ""|-h|--help)
