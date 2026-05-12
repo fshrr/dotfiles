@@ -9,13 +9,13 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 
 accordion-padding = 30
 
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 default-root-container-orientation = 'auto'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
-persistent-workspaces = ["0", "G", "E", "Z", "C", "H", "F", "N", "S", "O"]
+persistent-workspaces = ["0", "9", "G", "E", "Z", "C", "H", "F", "N", "S", "O"]
 
 on-mode-changed = []
 
@@ -87,54 +87,55 @@ run = 'move-node-to-workspace O'
 run = ['move-node-to-workspace 0', 'layout floating']
 
 [mode.main.binding]
-    # Layout toggles
-    alt-slash = 'layout tiles horizontal vertical'
-    alt-comma = 'layout accordion horizontal vertical'
+    # Switch to workspace
+    ctrl-alt-cmd-g = 'workspace G'
+    ctrl-alt-cmd-e = 'workspace E'
+    ctrl-alt-cmd-z = 'workspace Z'
+    ctrl-alt-cmd-c = 'workspace C'
+    ctrl-alt-cmd-h = 'workspace H'
+    ctrl-alt-cmd-f = 'workspace F'
+    ctrl-alt-cmd-n = 'workspace N'
+    ctrl-alt-cmd-s = 'workspace S'
+    ctrl-alt-cmd-o = 'workspace O'
+    ctrl-alt-cmd-0 = 'workspace 0'
+    ctrl-alt-cmd-9 = 'workspace 9'
+    ctrl-alt-cmd-grave_accent_and_tilde = 'workspace G'
 
-    # Focus (vim-style)
-    alt-h = 'focus left'
-    alt-j = 'focus down'
-    alt-k = 'focus up'
-    alt-l = 'focus right'
+    # Cycle forward through windows in current workspace
+    ctrl-alt-cmd-tab = 'focus next --wrap-around next-workspace'
 
-    # Move window
-    alt-shift-h = 'move left'
-    alt-shift-j = 'move down'
-    alt-shift-k = 'move up'
-    alt-shift-l = 'move right'
+    # Move current workspace to next monitor
+    ctrl-alt-cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-    # Resize
-    alt-minus = 'resize smart -50'
-    alt-equal = 'resize smart +50'
+    # Move current window to workspace
+    ctrl-alt-cmd-shift-g = 'move-node-to-workspace G'
+    ctrl-alt-cmd-shift-e = 'move-node-to-workspace E'
+    ctrl-alt-cmd-shift-z = 'move-node-to-workspace Z'
+    ctrl-alt-cmd-shift-c = 'move-node-to-workspace C'
+    ctrl-alt-cmd-shift-h = 'move-node-to-workspace H'
+    ctrl-alt-cmd-shift-f = 'move-node-to-workspace F'
+    ctrl-alt-cmd-shift-n = 'move-node-to-workspace N'
+    ctrl-alt-cmd-shift-s = 'move-node-to-workspace S'
+    ctrl-alt-cmd-shift-o = 'move-node-to-workspace O'
+    ctrl-alt-cmd-shift-0 = 'move-node-to-workspace 0'
+    ctrl-alt-cmd-shift-9 = 'move-node-to-workspace 9'
 
-    # Move window to workspace
-    alt-shift-0 = 'move-node-to-workspace 0'
-    alt-shift-g = 'move-node-to-workspace G'
-    alt-shift-e = 'move-node-to-workspace E'
-    alt-shift-z = 'move-node-to-workspace Z'
-    alt-shift-c = 'move-node-to-workspace C'
-    alt-shift-f = 'move-node-to-workspace F'
-    alt-shift-n = 'move-node-to-workspace N'
-    alt-shift-s = 'move-node-to-workspace S'
-    alt-shift-o = 'move-node-to-workspace O'
-
-    # Back and forth, move workspace to monitor
-    alt-tab = 'workspace-back-and-forth'
-    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    # Toggle layout tiles <-> accordion
+    ctrl-alt-cmd-minus = 'layout tiles accordion'
 
     # Reset all windows to their assigned workspaces
-    alt-shift-r = 'exec-and-forget ~/.config/aerospace/reset-workspaces.sh'
+    ctrl-alt-cmd-shift-r = 'exec-and-forget ~/.config/aerospace/reset-workspaces.sh'
 
-    # Enter service mode
-    alt-shift-semicolon = 'mode service'
+    # Service mode — commented out, uncomment if needed
+    # ctrl-alt-cmd-shift-semicolon = 'mode service'
 
-[mode.service.binding]
-    esc = ['reload-config', 'mode main']
-    r = ['flatten-workspace-tree', 'mode main']
-    f = ['layout floating tiling', 'mode main']
-    backspace = ['close-all-windows-but-current', 'mode main']
-
-    alt-shift-h = ['join-with left', 'mode main']
-    alt-shift-j = ['join-with down', 'mode main']
-    alt-shift-k = ['join-with up', 'mode main']
-    alt-shift-l = ['join-with right', 'mode main']
+# [mode.service.binding]
+#     esc = ['reload-config', 'mode main']
+#     r = ['flatten-workspace-tree', 'mode main']
+#     f = ['layout floating tiling', 'mode main']
+#     backspace = ['close-all-windows-but-current', 'mode main']
+#
+#     alt-shift-h = ['join-with left', 'mode main']
+#     alt-shift-j = ['join-with down', 'mode main']
+#     alt-shift-k = ['join-with up', 'mode main']
+#     alt-shift-l = ['join-with right', 'mode main']
