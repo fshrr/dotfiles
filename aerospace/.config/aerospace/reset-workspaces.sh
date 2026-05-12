@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Reset all open windows to their assigned workspaces.
-# Bound to alt-shift-r in aerospace config.
+# Bound to ctrl-alt-cmd-shift-r in aerospace config.
 
 move_app_windows() {
     local pattern="$1"
