@@ -10,3 +10,5 @@ lazy-lock.json
 
 zsh/.config/zsh/99-local.zsh
 zsh/.config/zsh/.zcompdump
+
+docs/superpowers/
