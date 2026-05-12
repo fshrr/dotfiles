@@ -107,7 +107,7 @@ run = ['move-node-to-workspace 0', 'layout floating']
     ctrl-alt-cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     # Move current window to workspace
-    ctrl-alt-cmd-shift-g = 'move-node-to-workspace G'
+    ctrl-alt-cmd-shift-backtick = 'move-node-to-workspace G'
     ctrl-alt-cmd-shift-e = 'move-node-to-workspace E'
     ctrl-alt-cmd-shift-z = 'move-node-to-workspace Z'
     ctrl-alt-cmd-shift-c = 'move-node-to-workspace C'
