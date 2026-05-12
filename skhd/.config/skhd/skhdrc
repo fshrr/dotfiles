@@ -1,18 +1,3 @@
-# Switch workspace — Gigabyte (main)
-rcmd - g : /opt/homebrew/bin/aerospace workspace G
-rcmd - e : /opt/homebrew/bin/aerospace workspace E
-rcmd - z : /opt/homebrew/bin/aerospace workspace Z
-rcmd - c : /opt/homebrew/bin/aerospace workspace C
-
-# Switch workspace — LG (secondary)
-rcmd - h : /opt/homebrew/bin/aerospace workspace H
-rcmd - f : /opt/homebrew/bin/aerospace workspace F
-rcmd - n : /opt/homebrew/bin/aerospace workspace N
-rcmd - s : /opt/homebrew/bin/aerospace workspace S
-rcmd - o : /opt/homebrew/bin/aerospace workspace O
-
-# Switch to catchall workspace
-rcmd - 0 : /opt/homebrew/bin/aerospace workspace 0
-
-# Move current workspace to next monitor
-rcmd + cmd - tab : /opt/homebrew/bin/aerospace move-workspace-to-monitor --wrap-around next
+# skhd is kept for future shell-command hotkeys that aerospace cannot handle
+# (e.g. app launchers, scripts, system toggles).
+# All window management hotkeys live in aerospace.toml.
