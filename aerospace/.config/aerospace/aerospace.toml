@@ -99,10 +99,8 @@ run = ['move-node-to-workspace 0', 'layout floating']
     ctrl-alt-cmd-o = 'workspace O'
     ctrl-alt-cmd-0 = 'workspace 0'
     ctrl-alt-cmd-9 = 'workspace 9'
-    ctrl-alt-cmd-grave_accent_and_tilde = 'workspace G'
-
     # Cycle forward through windows in current workspace
-    ctrl-alt-cmd-tab = 'focus next --wrap-around next-workspace'
+    ctrl-alt-cmd-tab = 'focus dfs-next'
 
     # Move current workspace to next monitor
     ctrl-alt-cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
