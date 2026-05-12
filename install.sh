@@ -14,7 +14,7 @@ case "$PROFILE" in
 Usage: $0 <profile>
 
 Profiles:
-  mac      Full macOS setup (zsh git nvim tmux ghostty oh-my-posh skhd aerospace)
+  mac      Full macOS setup (zsh git nvim tmux ghostty oh-my-posh skhd aerospace zed karabiner)
   server   Linux homelab (zsh git nvim tmux oh-my-posh)
   minimal  Bare minimum (zsh git)
 
