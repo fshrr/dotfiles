@@ -103,5 +103,43 @@
   "unbind": {
    "cmd-shift-o": "outline::Toggle"
   }
+ },
+ {
+  "context": "Workspace",
+  "unbind": {
+   "ctrl-r": [
+    "projects::OpenRecent",
+    {
+     "create_new_window": false
+    }
+   ]
+  }
+ },
+ {
+  "context": "Workspace",
+  "bindings": {
+   "cmd-o": [
+    "projects::OpenRecent",
+    {
+     "create_new_window": false
+    }
+   ]
+  }
+ },
+ {
+  "context": "Workspace",
+  "unbind": {
+   "alt-cmd-o": [
+    "projects::OpenRecent",
+    {
+     "create_new_window": false
+    }
+   ]
+  }
+ },
+ {
+  "unbind": {
+   "cmd-o": "workspace::Open"
+  }
  }
 ]
