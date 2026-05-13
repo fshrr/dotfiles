@@ -26,7 +26,7 @@
 		"folder_icons": false,
 		"file_icons": true,
 		"entry_spacing": "comfortable",
-		"default_width": 150.0,
+		"default_width": 300.0,
 		"dock": "left",
 	},
 	"outline_panel": {
@@ -34,7 +34,7 @@
 	},
 	"agent": {
 		"sidebar_side": "right",
-  "max_content_width": 640.0,
+		"max_content_width": 640.0,
 		"play_sound_when_agent_done": "always",
 		"dock": "right",
 		"favorite_models": [],
