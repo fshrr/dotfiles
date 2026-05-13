@@ -101,7 +101,7 @@ run = ['move-node-to-workspace 0', 'layout floating']
     ctrl-alt-cmd-9 = 'workspace 9'
     ctrl-alt-cmd-backtick = 'workspace G'
     # Cycle forward through windows in current workspace
-    ctrl-alt-cmd-tab = 'focus dfs-next'
+    ctrl-alt-cmd-tab = 'focus --boundaries-action wrap-around-the-workspace dfs-next'
 
     # Move current workspace to next monitor
     ctrl-alt-cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
