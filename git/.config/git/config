@@ -27,4 +27,4 @@
 	precommit = diff --cached --diff-algorithm=minimal -w
 	graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
 	nevermind = !git reset --hard HEAD && git clean -d -f
-
+	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
