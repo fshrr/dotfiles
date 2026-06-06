@@ -48,6 +48,9 @@ alias tmuxconf="nvim ~/.config/tmux"
 alias gitconf="nvim ~/.config/git/config"
 alias sshconf="nvim ~/.ssh/config"
 
+# git
+gra() { git remote add origin "$(gh repo view "$1" --json sshUrl -q .sshUrl)"; }
+
 # --- Platform-specific aliases ---
 case "$OSTYPE" in
   darwin*)
