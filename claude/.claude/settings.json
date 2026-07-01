@@ -1,0 +1,100 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Edit(**)",
+      "Read(**)",
+      "Write(**)",
+      "Bash(npm run *)",
+      "Bash(python -m pytest *)",
+      "Bash(ruff check *)",
+      "Bash(black *)",
+      "Bash(git *)",
+      "Bash(* --version)",
+      "Bash(* --help *)",
+      "mcp__github__list_pull_requests",
+      "mcp__github__get_pull_request",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(grep *)",
+      "Bash(glob *)",
+      "Agent(Plan)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/opt/homebrew/Cellar/node/25.2.1/bin/node\" \"/Users/protoxpire0/.claude/hooks/caveman-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading caveman mode..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/opt/homebrew/Cellar/node/25.2.1/bin/node\" \"/Users/protoxpire0/.claude/hooks/caveman-mode-tracker.js\"",
+            "timeout": 5,
+            "statusMessage": "Tracking caveman mode..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/protoxpire0/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "caveman@caveman": true
+  },
+  "extraKnownMarketplaces": {
+    "notion-plugin-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "makenotion/claude-code-notion-plugin"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "voiceEnabled": true
+}
