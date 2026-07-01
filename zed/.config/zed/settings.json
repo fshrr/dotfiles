@@ -7,8 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+	"edit_predictions": {
+		"provider": "zed",
+	},
 	"when_closing_with_no_tabs": "keep_window_open",
- "helix_mode": true,
+	"helix_mode": true,
 	"vim_mode": false,
 	"cli_default_open_behavior": "existing_window",
 	"project_panel": {
@@ -55,10 +58,14 @@
 	"agent_servers": {
 		"claude-acp": {
 			"default_config_options": {
-    "model": "default"
-   },
-   "type": "registry",
-			"default_mode": "plan",
+				"effort": "max",
+				"mode": "auto",
+			},
+			"type": "registry",
+			"default_mode": "Auto",
+			"env": {
+				"ANTHROPIC_MODEL": "claude-opus-4-8",
+			},
 		},
 	},
 	"git_panel": {
@@ -89,8 +96,8 @@
 	"base_keymap": "VSCode",
 	"preview_tabs": {
 		"enable_preview_multibuffer_from_code_navigation": true,
-  "enable_preview_from_file_finder": true,
-  "enabled": true,
+		"enable_preview_from_file_finder": true,
+		"enabled": true,
 	},
 	"fast_scroll_sensitivity": 6.0,
 	"gutter": {
