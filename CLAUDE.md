@@ -9,7 +9,7 @@ This is a cross-platform (macOS + Linux) dotfiles repository managed with [GNU S
 ## Install script
 
 `./install.sh <profile>` is a profile-aware stow runner. Profiles:
-- `mac` — zsh git nvim tmux ghostty oh-my-posh skhd
+- `mac` — zsh git nvim tmux ghostty oh-my-posh skhd aerospace zed karabiner claude
 - `server` — zsh git nvim tmux oh-my-posh
 - `minimal` — zsh git
 
@@ -35,6 +35,7 @@ stow */
 
 ## Packages
 
+- **claude** — Claude Code settings (`~/.claude/settings.json`): permissions allowlist, session hooks (caveman mode tracker + `rtk` Bash pre-hook), enabled plugins/marketplaces, statusline. `mac`-only profile — hook and statusline commands embed absolute `/Users/...` and Homebrew paths, so it is not stowed on `server`. Hook `command`s invoke `node`/`bash` via PATH (not pinned Cellar paths) but the script paths themselves are still machine-specific.
 - **ghostty** — Ghostty terminal config and theme files (`~/.config/ghostty/`)
 - **git** — Git config and global ignore (`~/.config/git/`)
 - **nvim** — Neovim config based on kickstart.nvim (`~/.config/nvim/`)
