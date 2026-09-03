@@ -35,7 +35,7 @@ stow */
 
 ## Packages
 
-- **claude** — Claude Code settings (`~/.claude/settings.json`): permissions allowlist, session hooks (caveman mode tracker + `rtk` Bash pre-hook), enabled plugins/marketplaces, statusline. `mac`-only profile — hook and statusline commands embed absolute `/Users/...` and Homebrew paths, so it is not stowed on `server`. Hook `command`s invoke `node`/`bash` via PATH (not pinned Cellar paths) but the script paths themselves are still machine-specific.
+- **claude** — Claude Code settings (`~/.claude/settings.json`): permissions allowlist, session hooks (caveman mode tracker + `rtk` Bash pre-hook), enabled plugins/marketplaces, statusline. Also user-level skills (`~/.claude/skills/<name>/SKILL.md`): `blog-post-writer`, `docs-setup`, `find-docs` (Context7 via `ctx7` CLI), `using-worktrunk`. Stow folds `skills/` into a single directory symlink, so new skills dropped into `~/.claude/skills/` land in the repo automatically. `mac`-only profile — hook and statusline commands embed absolute `/Users/...` and Homebrew paths, so it is not stowed on `server`. Hook `command`s invoke `node`/`bash` via PATH (not pinned Cellar paths) but the script paths themselves are still machine-specific.
 - **ghostty** — Ghostty terminal config and theme files (`~/.config/ghostty/`)
 - **git** — Git config and global ignore (`~/.config/git/`)
 - **nvim** — Neovim config based on kickstart.nvim (`~/.config/nvim/`)
