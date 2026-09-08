@@ -8,7 +8,7 @@ Just the required set above.
 
 ## Profile: server
 Required + these:
-- `neovim`, `tmux`, `oh-my-posh`, `eza`, `fzf`, `zoxide`, `fd` (for `tre`)
+- `neovim`, `tmux`, `oh-my-posh`, `eza`, `fzf`, `zoxide`, `fd`
 
 ## Profile: mac
 Everything in `server`, plus macOS-only:

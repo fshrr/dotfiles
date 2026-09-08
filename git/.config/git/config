@@ -4,7 +4,6 @@
 	email = fahim.shahreer95@gmail.com
 [core]
 	ignorecase = false
-	pager = delta
 [commit]
 	gpgsign = false
 [init]
@@ -12,8 +11,6 @@
 [push]
 	autoSetupRemote = true
 	default = current
-[delta]
-	line-numbers = true
 [fetch]
         prune = true
 [interactive]
