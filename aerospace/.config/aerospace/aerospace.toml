@@ -43,7 +43,12 @@ O   = 'secondary'
 
 # App → workspace routing (order matters: catch-all must be last)
 [[on-window-detected]]
-if.app-name-regex-substring = 'Ghostty'
+if.app-name-regex-substring = 'cmux'
+run = 'move-node-to-workspace G'
+
+# T3 Code lives with the terminal/tmux workspace
+[[on-window-detected]]
+if.app-id = 'com.t3tools.t3code'
 run = 'move-node-to-workspace G'
 
 [[on-window-detected]]
@@ -56,6 +61,11 @@ run = 'move-node-to-workspace Z'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Claude'
+run = 'move-node-to-workspace C'
+
+# Chrome lives with Claude Desktop
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
