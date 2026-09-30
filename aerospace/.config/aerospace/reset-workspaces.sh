@@ -13,10 +13,12 @@ move_app_windows() {
         done
 }
 
-move_app_windows 'Ghostty'    G
+move_app_windows 'cmux'       G
+move_app_windows 'T3 Code'    G
 move_app_windows 'Zed'        E
 move_app_windows 'Zen'        Z
 move_app_windows 'Claude'     C
+move_app_windows 'Google Chrome' C
 move_app_windows 'Perplexity' C
 move_app_windows 'Helium'     H
 move_app_windows 'Figma'      F
