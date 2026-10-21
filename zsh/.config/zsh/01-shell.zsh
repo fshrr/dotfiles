@@ -29,5 +29,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 command -v fzf >/dev/null && source <(fzf --zsh)
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
+# Fresh GitHub token from the gh keychain on every shell
+command -v gh >/dev/null && export GITHUB_TOKEN="$(env -u GITHUB_TOKEN -u GH_TOKEN gh auth token 2>/dev/null)"
+
 # tre wrapper — sources its aliases file after run
 tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
