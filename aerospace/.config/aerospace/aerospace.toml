@@ -15,7 +15,7 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
-persistent-workspaces = ["0", "9", "Terms", "Editor", "Z", "C", "H", "F", "N", "S", "O"]
+persistent-workspaces = ["0", "9", "Terms", "Editor", "Browsers", "Agents", "H", "F", "N", "S", "O"]
 
 on-mode-changed = []
 
@@ -31,6 +31,9 @@ on-mode-changed = []
     outer.right =      8
 
 # App → workspace routing (order matters: catch-all must be last)
+
+### TERMINALS
+
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace Terms'
@@ -39,25 +42,33 @@ run = 'move-node-to-workspace Terms'
 if.app-id = "com.apple.Terminal"
 run = 'move-node-to-workspace Terms'
 
+### EDITORS
+
 [[on-window-detected]]
 if.app-name-regex-substring = 'Zed'
 run = 'move-node-to-workspace Editor'
 
+# Cursor
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = 'move-node-to-workspace Editor'
 
+### BROWSERS
+[[on-window-detected]]
+if.app-id = "com.google.Chrome"
+run = 'move-node-to-workspace Browsers'
+
 [[on-window-detected]]
 if.app-name-regex-substring = 'Zen'
-run = 'move-node-to-workspace Z'
+run = 'move-node-to-workspace Browsers'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Claude'
-run = 'move-node-to-workspace C'
+run = 'move-node-to-workspace Agents'
 
 [[on-window-detected]]
-if.app-id = "com.google.Chrome"
-run = 'move-node-to-workspace C'
+if.app-id = 'com.google.Chrome.app.cmpjhfcplodfceehidopdiafjkbgmiaj'
+run = 'move-node-to-workspace Agents'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Helium'
