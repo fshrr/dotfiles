@@ -98,8 +98,8 @@ run = ['move-node-to-workspace 0', 'layout floating']
 [mode.main.binding]
     # Switch to workspace
     ctrl-alt-cmd-e = 'workspace Editor'
-    ctrl-alt-cmd-z = 'workspace Z'
-    ctrl-alt-cmd-c = 'workspace C'
+    ctrl-alt-cmd-z = 'workspace Browsers'
+    ctrl-alt-cmd-c = 'workspace Agents'
     ctrl-alt-cmd-h = 'workspace H'
     ctrl-alt-cmd-f = 'workspace F'
     ctrl-alt-cmd-n = 'workspace N'
@@ -117,8 +117,8 @@ run = ['move-node-to-workspace 0', 'layout floating']
     # Move current window to workspace
     ctrl-alt-cmd-shift-backtick = 'move-node-to-workspace Terms'
     ctrl-alt-cmd-shift-e = 'move-node-to-workspace Editor'
-    ctrl-alt-cmd-shift-z = 'move-node-to-workspace Z'
-    ctrl-alt-cmd-shift-c = 'move-node-to-workspace C'
+    ctrl-alt-cmd-shift-z = 'move-node-to-workspace Browsers'
+    ctrl-alt-cmd-shift-c = 'move-node-to-workspace Agents'
     ctrl-alt-cmd-shift-h = 'move-node-to-workspace H'
     ctrl-alt-cmd-shift-f = 'move-node-to-workspace F'
     ctrl-alt-cmd-shift-n = 'move-node-to-workspace N'
@@ -130,8 +130,8 @@ run = ['move-node-to-workspace 0', 'layout floating']
     # Toggle layout tiles <-> accordion
     ctrl-alt-cmd-minus = 'layout tiles accordion'
 
-    # Reset all windows to their assigned workspaces
-    ctrl-alt-cmd-shift-r = 'exec-and-forget ~/.config/aerospace/reset-workspaces.sh'
+    # Re-apply the on-window-detected rules to windows already open
+    ctrl-alt-cmd-shift-r = 'run-callback --for-every-window on-window-detected'
 
     # Service mode — commented out, uncomment if needed
     # ctrl-alt-cmd-shift-semicolon = 'mode service'
