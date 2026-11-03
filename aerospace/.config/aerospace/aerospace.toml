@@ -15,7 +15,7 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
-persistent-workspaces = ["0", "9", "Terms", "Editor", "Browsers", "Agents", "H", "F", "N", "S", "O"]
+persistent-workspaces = ["0", "9", "Terms", "Editor", "Browsers", "Agents", "B", "L", "F", "N", "S", "O"]
 
 on-mode-changed = []
 
@@ -42,6 +42,10 @@ run = 'move-node-to-workspace Terms'
 if.app-id = "com.apple.Terminal"
 run = 'move-node-to-workspace Terms'
 
+[[on-window-detected]]
+if.app-id = 'com.superlogical.rex'
+run = 'move-node-to-workspace Terms'
+
 ### EDITORS
 
 [[on-window-detected]]
@@ -63,6 +67,10 @@ if.app-name-regex-substring = 'Zen'
 run = 'move-node-to-workspace Browsers'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Helium'
+run = 'move-node-to-workspace Browsers'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'Claude'
 run = 'move-node-to-workspace Agents'
 
@@ -71,8 +79,16 @@ if.app-id = 'com.google.Chrome.app.cmpjhfcplodfceehidopdiafjkbgmiaj'
 run = 'move-node-to-workspace Agents'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Helium'
-run = 'move-node-to-workspace H'
+if.app-id = 'com.cohere.northcode'
+run = 'move-node-to-workspace Agents'
+
+[[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-id = 'com.linear'
+run = 'move-node-to-workspace L'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Figma'
@@ -99,8 +115,9 @@ run = ['move-node-to-workspace 0', 'layout floating']
     # Switch to workspace
     ctrl-alt-cmd-e = 'workspace Editor'
     ctrl-alt-cmd-z = 'workspace Browsers'
-    ctrl-alt-cmd-c = 'workspace Agents'
-    ctrl-alt-cmd-h = 'workspace H'
+    ctrl-alt-cmd-a = 'workspace Agents'
+    ctrl-alt-cmd-b = 'workspace B'
+    ctrl-alt-cmd-l = 'workspace L'
     ctrl-alt-cmd-f = 'workspace F'
     ctrl-alt-cmd-n = 'workspace N'
     ctrl-alt-cmd-s = 'workspace S'
@@ -118,8 +135,9 @@ run = ['move-node-to-workspace 0', 'layout floating']
     ctrl-alt-cmd-shift-backtick = 'move-node-to-workspace Terms'
     ctrl-alt-cmd-shift-e = 'move-node-to-workspace Editor'
     ctrl-alt-cmd-shift-z = 'move-node-to-workspace Browsers'
-    ctrl-alt-cmd-shift-c = 'move-node-to-workspace Agents'
-    ctrl-alt-cmd-shift-h = 'move-node-to-workspace H'
+    ctrl-alt-cmd-shift-a = 'move-node-to-workspace Agents'
+    ctrl-alt-cmd-shift-b = 'move-node-to-workspace B'
+    ctrl-alt-cmd-shift-l = 'move-node-to-workspace L'
     ctrl-alt-cmd-shift-f = 'move-node-to-workspace F'
     ctrl-alt-cmd-shift-n = 'move-node-to-workspace N'
     ctrl-alt-cmd-shift-s = 'move-node-to-workspace S'
